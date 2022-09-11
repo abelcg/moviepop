@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Rubik:wght@100;200;300;400;500;600;800;900&display=swap);
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, .bg-principal {
+  background: #1a3148; 
+  background: -webkit-linear-gradient(
+    to right,
+    #1a3148,
+    #1e374e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1a3148,
+    #1e374e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body,
+main,
+header,
+footer,
+#root {
+  font-family: "Poppins", sans-serif;
+  color: #c48900;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.text-gold{
+  color: #c48900!important;
+}
+
+/* card de peliculas */
+
+.cardImg {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+.action {
+  position: absolute;
+  bottom: 0px;
+  left: -30px;
+}
+
+.action-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 3.5s ease-in-out;
+  transform-origin: right;
+}
+
+.action-container:hover .action li {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.title:hover{
+ color: #c48900!important;;
+}
+
+.action li {
+  position: relative;
+  list-style: none;
+  width: 40px;
+  height: 40px;
+  background: #f0ede3;
+  color: #c48900;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.5s;
+  transform: translateX(170px);
+  opacity: 0;
+}
+.action li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.action li:nth-child(3) {
+  transition-delay: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.action li:hover {
+  background: #c48900;
+  color: #1a3148;
+  transform: translateX(60px);
+}
+.action li span {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-180%);
+  white-space: nowrap;
+  padding: 4px 10px;
+  background: #fff;
+  color: #333;
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.action li:hover span {
+  transform: translateY(-50%) translateX(140%);
+  opacity: 1;
+}
+
+.action li span::after {
+  content: "";
+  top: 50%;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Fin grilla de peliculas */
+
+.font-family-alternative {
+  font-family: "Rubik", sans-serif;
+  font-size: 2.5rem !important;
+  line-height: 3.5rem !important;
+}
+
+/* películas favoritas */
+.fav {
+  width: 60% !important;
+}
+.fav-footer {
+  border-top: 1px solid #000;
+  background: #f4fafb;
+  padding: 1.5rem;
+}
+
+.fav-items-count {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: #fe696a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.25rem;
+}
+/* fin películas favoritas */
+
+.zIndex {
+  z-index: 10;
+}
+
+.w-64 {
+  width: 4rem;
+}
+
+.h-64 {
+  height: 4rem;
+}
+
+.font-size-subheader {
+  font-size: 1rem;
+  line-height: 1.875rem;
+}
+
+.font-color-light {
+  color: #a5a5a5 !important;
+}
+
+/* Configuro las media queries-------------------------- */
+/*------ Media Queries para dispositivos extra small ---*/
+@media all and (min-width: 319px) and (max-width: 575px) {
+  .fav {
+    width: 100% !important;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* ----------- Samsung Galaxy-Fold----------- */
+@media (max-device-width: 280px) and (max-device-height: 653px) {
+  .fav {
+    width: 100% !important;
   }
 }
