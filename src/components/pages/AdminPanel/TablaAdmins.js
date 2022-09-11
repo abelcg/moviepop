@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 
 
 const TablaAdmins = () => {
-    const URL = process.env.REACT_APP_API_URL+"/usuarios/";
+    const URL = process.env.REACT_APP_API_URL+"users";
     const [usuarios, setUsuarios] = useState([]);
     //verifico si hay un usuario logueado
     const user = JSON.parse(localStorage.getItem('user'));
@@ -16,16 +16,9 @@ const TablaAdmins = () => {
     const consultaAPI = async () => {
         const isAdmin = {isAdmin: user.isAdmin};
       try {
-        const respuesta = await fetch(URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-access-token": user.accessToken,
-            },
-            body: JSON.stringify(isAdmin),
-        });
+        const respuesta = await fetch(URL);
         const datos = await respuesta.json();
-        setUsuarios(datos);
+        setUsuarios(datos.user);
       } catch (error) {
         console.log(error);
       }
@@ -51,9 +44,9 @@ const TablaAdmins = () => {
               <tbody>
                 {usuarios.map((usuarios) => (
                  
-                 usuarios.isAdmin ?  (<tr key={usuarios._id}>
-                 <td>{usuarios.userName}</td>
-                 <td>{usuarios.userEmail}</td>
+                 usuarios.isAdmin ?  (<tr key={usuarios.id}>
+                 <td>{usuarios.name}</td>
+                 <td>{usuarios.email}</td>
                  {usuarios.isAdmin ? <td>Administrador</td> : null}
                </tr>) : null
                 ))}

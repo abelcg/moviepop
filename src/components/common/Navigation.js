@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Navbar, Nav, Container, Image, Offcanvas } from "react-bootstrap";
-import { AiOutlineHeart } from "react-icons/ai";
+import { Navbar, Nav, Container, Offcanvas } from "react-bootstrap";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { MdLogout } from "react-icons/md";
 import { MdLogin } from "react-icons/md";
 import { IoHome, IoSearch } from "react-icons/io5";
@@ -114,8 +114,8 @@ const Navigation = () => {
                 className="px-2 fs-4 text-gold fw-bolder"
                 onClick={handleMostrar}
               >
-                <AiOutlineHeart />{" "}
-                {!favoritas || favoritas.length === 0 ? null : (
+                {typeof favoritas.length === "undefined" || !favoritas || favoritas.length === 0 ? <AiOutlineHeart /> : <AiFillHeart></AiFillHeart>} 
+                {typeof favoritas.length === "undefined" || !favoritas || favoritas.length === 0 ? null : (
                   <span className="fav-items-count">{favoritas.length}</span>
                 )}
               </Nav.Link>
