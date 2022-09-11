@@ -36,7 +36,6 @@ const AgregarPelicula = (props) => {
     ) {
       // reset el state de error
       setError(false);
-      // crear una noticia y enviar a la API
       const nuevoPelicula = {
         title: title,
         img: img,

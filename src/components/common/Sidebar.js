@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Collapse from "react-bootstrap/Collapse";
 import { BiHome } from "react-icons/bi";
 import { BiListUl } from "react-icons/bi";
-import { BiArchive } from "react-icons/bi";
 import { BiHeart } from "react-icons/bi";
 import { BiUser } from "react-icons/bi";
 import { BsGear } from "react-icons/bs";

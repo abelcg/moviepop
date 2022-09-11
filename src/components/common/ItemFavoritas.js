@@ -66,7 +66,7 @@ const ItemFavoritas = (props) => {
                   className="bg-transparent border-0 text-end text-decoration-underline text-secondary"
                   onClick={consultaAPI}
                 >
-                  Remove
+                  Remover
                 </button>
               </div>
             </div>

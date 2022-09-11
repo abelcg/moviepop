@@ -109,7 +109,7 @@ const EditarPelicula = (props) => {
       setError(true);
     }
   };
- // console.log(pelicula)
+
   return (
     <>
       <div className="page-header">
