@@ -46,7 +46,7 @@ const Login = () => {
           // mostrar cartel al usuario
           Swal.fire("Usuario logueado!", "Autentificación exitosa", "success");
           // resetear el formulario
-          e.target.reset(); 
+          e.target.reset();
           //Guardo el token de acceso del usuario en localStorage
           const user = {
             accessToken: dato.accessToken,
@@ -57,15 +57,13 @@ const Login = () => {
           };
           localStorage.setItem("user", JSON.stringify(user));
           // redireccion a la pagina admin de lista de productos o a la pagina de inicio
-          {
-            user.isAdmin ? navigation("/rn/admin") : window.location.reload();
-          }
+
+          user.isAdmin ? navigation("/rn/admin") : window.location.reload();
         } else {
           setError(true);
-          const msg =   Object.values(dato.message)
-          .map((value) => {
+          const msg = Object.values(dato.message).map((value) => {
             return value.toString();
-          })
+          });
           dato.message && setErrorMje(msg);
         }
       } catch (error) {
@@ -115,22 +113,27 @@ const Login = () => {
         </div>
       </div>
       <div className="mb-3 d-flex justify-content-end">
-        <a
+        <button
           className="fs-sm text-secondary text-decoration-none btn"
           data-bs-toggle="tooltip"
           data-bs-placement="bottom"
-          href="#"
           title="Presione para el envio del email de recuperacion"
         >
           ¿Olvidó su password?
-        </a>
+        </button>
       </div>
-      <button className="btn btn-dark bg-principal btn-shadow d-block w-100" type="submit">
+      <button
+        className="btn btn-dark bg-principal btn-shadow d-block w-100"
+        type="submit"
+      >
         Iniciar Sesión
       </button>
       {error === true ? (
         <Alert variant="danger" onClick={() => setError(false)} dismissible>
-          <p> {typeof errorMje==="Object"? errorMje.toString(): errorMje}</p>
+          <p>
+            {" "}
+            {typeof errorMje === "object" ? errorMje.toString() : errorMje}
+          </p>
         </Alert>
       ) : null}
     </Form>
