@@ -10,7 +10,7 @@ const campoRequerido = (valor) => {
     // validar URL con una expresión regular
     // eslint-disable-line
     let patron = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/; // eslint-disable-line
-    if (valor.trim().length != "" && patron.test(valor)) {
+    if (valor.trim().length !== "" && patron.test(valor)) {
       return true;
     } else {
       return false;
@@ -20,7 +20,7 @@ const campoRequerido = (valor) => {
   const validarEmail = (valor) => {
     // eslint-disable-line
     let patron = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/; // eslint-disable-line
-    if (valor.trim().length != "" && patron.test(valor)) {
+    if (valor.trim().length !== "" && patron.test(valor)) {
       return true;
     } else {
       return false;
