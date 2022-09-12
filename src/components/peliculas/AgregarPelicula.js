@@ -8,6 +8,7 @@ import { campoRequerido, validarURL } from "../helpers/helper";
 import Swal from "sweetalert2";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
+import { DateTime } from "luxon";
 
 const AgregarPelicula = (props) => {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ const AgregarPelicula = (props) => {
   const [genres, setGenres] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
   const [synopsis, setSynopsis] = useState("");
-
+ 
   const [error, setError] = useState(false);
 
   const URL = process.env.REACT_APP_API_URL + "movie";
@@ -78,6 +79,10 @@ const AgregarPelicula = (props) => {
       setError(true);
     }
   };
+
+  const parseDate = (date) => {
+    return DateTime.fromISO(date).setLocale('sp').toFormat('MMMM dd, yyyy');
+   }
 
   return (
     <>
@@ -216,7 +221,7 @@ const AgregarPelicula = (props) => {
                       </div>
                     ) : null}
                     <div className="fw-light d-flex ">
-                      {releaseDate ? <span>{releaseDate}</span> : null}
+                      {releaseDate ? <span>{parseDate(releaseDate)}</span> : null}
                     </div>
                   </Card.Title>
                   <Card.Text>{language || null}</Card.Text>
