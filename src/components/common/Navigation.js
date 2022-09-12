@@ -29,8 +29,6 @@ const Navigation = () => {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  const [error, setError] = useState(true);
-
   useEffect(() => {
     if (user) {
       setCurrentUser(user);
@@ -49,11 +47,9 @@ const Navigation = () => {
       if (respuesta.status === 200) {
         setFavoritas(dato.user.movies);
         localStorage.setItem("favoritas", JSON.stringify(dato.user.movies));
-        setError(false);
       }
     } catch (error) {
       console.log(error);
-      setError(true);
     }
   };
 
