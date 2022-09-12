@@ -23,7 +23,6 @@ const Navigation = () => {
   const [currentUser, setCurrentUser] = useState(undefined);
   const [isAdmin, setIsAdmin] = useState(false);
   //Si hay usuaraio loggeado guardo el estado de su id para usarlo de parametro de ruta checkout
-  const [usuarioIdParam, setUsuarioIdParam] = useState("");
 
   //obtengo los items del favoritas
   const { favoritas, setFavoritas } = useContext(FavContext);
@@ -37,12 +36,12 @@ const Navigation = () => {
       setCurrentUser(user);
       setIsAdmin(user.isAdmin);
       consultaAPI();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }
   }, [error, FavContext]);
 
   const consultaAPI = async () => {
     const userId = user.userId;
-    setUsuarioIdParam(userId);
     const URL = process.env.REACT_APP_API_URL + "favorite/" + userId;
     try {
       const respuesta = await fetch(URL);
@@ -92,23 +91,23 @@ const Navigation = () => {
                 </Link>
               ) : null}
               {currentUser ? (
-                <a
+                <button
                   className="nav-link text-gold btn-sm px-2 fs-6 fw-bold"
                   type="button"
                   id="login-btn"
                   onClick={logout}
                 >
                   Logout <MdLogout className="mx-1 fs-5" />
-                </a>
+                </button>
               ) : (
-                <a
+                <button
                   className="nav-link text-gold btn-sm px-2 fs-6 fw-bold"
                   type="button"
                   onClick={handleShow}
                 >
                   <MdLogin className="mx-1 fs-5" />
                   Login
-                </a>
+                </button>
               )}
               <Nav.Link
                 className="px-2 fs-4 text-gold fw-bolder"

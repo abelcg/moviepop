@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext} from "react";
 import { Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
@@ -123,30 +123,30 @@ const MovieCard = (props) => {
           !favoritas ||
           favoritas.length === 0 ? (
             <ul className="action">
-              <a className="text-dark" type="button" onClick={agregarFav}>
+              <button className="text-dark" type="button" onClick={agregarFav}>
                 <li>
                   <FaRegHeart></FaRegHeart>
                   <span>Añadir a favoritos</span>
                 </li>
-              </a>
+              </button>
             </ul>
           ) : added === props.peliculas.id ? (
             <ul className="action">
-              <a className="text-dark" type="button" onClick={eliminarFav}>
+              <button className="text-dark" type="button" onClick={eliminarFav}>
                 <li>
                   <FaHeart></FaHeart>
                   <span>Borrar de favoritos</span>
                 </li>
-              </a>
+              </button>
             </ul>
           ) : (
             <ul className="action">
-              <a className="text-dark" type="button" onClick={agregarFav}>
+              <button className="text-dark" type="button" onClick={agregarFav}>
                 <li>
                   <FaRegHeart></FaRegHeart>
                   <span>Añadir a favoritos</span>
                 </li>
-              </a>
+              </button>
             </ul>
           )}
 
