@@ -34,8 +34,8 @@ const Navigation = () => {
       setCurrentUser(user);
       setIsAdmin(user.isAdmin);
       consultaAPI();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const consultaAPI = async () => {
