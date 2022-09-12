@@ -38,7 +38,7 @@ const Navigation = () => {
       consultaAPI();
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }
-  }, [error]);
+  }, []);
 
   const consultaAPI = async () => {
     const userId = user.userId;
@@ -92,7 +92,7 @@ const Navigation = () => {
               ) : null}
               {currentUser ? (
                 <button
-                  className="nav-link text-gold btn-sm px-2 fs-6 fw-bold"
+                  className="nav-link text-gold btn-sm px-2 fs-6 fw-bold bg-principal2 border border-0"
                   type="button"
                   id="login-btn"
                   onClick={logout}
@@ -101,7 +101,7 @@ const Navigation = () => {
                 </button>
               ) : (
                 <button
-                  className="nav-link text-gold btn-sm px-2 fs-6 fw-bold"
+                  className="nav-link text-gold btn-sm px-2 fs-6 fw-bold bg-principal2 border border-0"
                   type="button"
                   onClick={handleShow}
                 >

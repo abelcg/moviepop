@@ -123,7 +123,7 @@ const MovieCard = (props) => {
           !favoritas ||
           favoritas.length === 0 ? (
             <ul className="action">
-              <button className="text-dark" type="button" onClick={agregarFav}>
+              <button className="text-dark bg-principal2 border border-0" type="button" onClick={agregarFav}>
                 <li>
                   <FaRegHeart></FaRegHeart>
                   <span>Añadir a favoritos</span>
@@ -132,7 +132,7 @@ const MovieCard = (props) => {
             </ul>
           ) : added === props.peliculas.id ? (
             <ul className="action">
-              <button className="text-dark" type="button" onClick={eliminarFav}>
+              <button className="text-dark bg-principal2 border border-0" type="button" onClick={eliminarFav}>
                 <li>
                   <FaHeart></FaHeart>
                   <span>Borrar de favoritos</span>
@@ -141,7 +141,7 @@ const MovieCard = (props) => {
             </ul>
           ) : (
             <ul className="action">
-              <button className="text-dark" type="button" onClick={agregarFav}>
+              <button className="text-dark bg-secondary border border-0" type="button" onClick={agregarFav}>
                 <li>
                   <FaRegHeart></FaRegHeart>
                   <span>Añadir a favoritos</span>
