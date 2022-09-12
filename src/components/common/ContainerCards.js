@@ -10,6 +10,7 @@ const ContainerCards = () => {
 
   useEffect(() => {
     consultaAPI();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
   const consultaAPI = async () => {

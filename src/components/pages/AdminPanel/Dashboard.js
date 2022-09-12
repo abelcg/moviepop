@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import moviepop from "../../img/moviepop.png";
 
 const Dashboard = () => {

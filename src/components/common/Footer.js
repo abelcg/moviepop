@@ -40,6 +40,7 @@ const Footer = () => {
                   className="nav-link text-secondary pe-1"
                   href="https://m.facebook.com/?locale=es_ES"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <AiFillFacebook className="text-gold fs-2"></AiFillFacebook>
                 </a>
@@ -49,6 +50,7 @@ const Footer = () => {
                   className="nav-link text-secondary pe-1"
                   href="https://twitter.com/login?lang=es"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <AiFillTwitterSquare className="text-gold fs-2"></AiFillTwitterSquare>
                 </a>
@@ -58,6 +60,7 @@ const Footer = () => {
                   className="nav-link text-secondary pe-2"
                   href="https://www.youtube.com"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <AiFillYoutube className="text-gold fs-2"></AiFillYoutube>
                 </a>
@@ -67,6 +70,7 @@ const Footer = () => {
                   className="nav-link text-secondary pe-2"
                   href="https://www.instagram.com/?hl=es-la"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <AiFillInstagram className="text-gold fs-2"></AiFillInstagram>
                 </a>

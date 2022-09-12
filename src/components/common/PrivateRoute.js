@@ -10,6 +10,7 @@ const PrivateRoute = ({children }) => {
 
     useEffect(() => {
         consultaAPI();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
      
       const consultaAPI = async () => {
