@@ -119,6 +119,7 @@ const Login = () => {
           className="fs-sm text-secondary text-decoration-none btn"
           data-bs-toggle="tooltip"
           data-bs-placement="bottom"
+          href="#"
           title="Presione para el envio del email de recuperacion"
         >
           ¿Olvidó su password?

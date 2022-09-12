@@ -62,7 +62,7 @@ const AdminNav = () => {
           </Container>
         </Nav>
       </header>
-      <AdminMain clicked={clicked}></AdminMain>
+      <AdminMain clicked={clicked} currentUser={currentUser}></AdminMain>
     </>
   );
 };

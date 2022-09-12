@@ -106,6 +106,7 @@ const DetallePelicula = () => {
   //Consultar por la pelicula buscada
   useEffect(() => {
     consultaAPI();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, error]);
 
   const consultaAPI = async () => {

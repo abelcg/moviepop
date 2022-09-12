@@ -6,15 +6,13 @@ import Table from "react-bootstrap/Table";
 const TablaAdmins = () => {
     const URL = process.env.REACT_APP_API_URL+"users";
     const [usuarios, setUsuarios] = useState([]);
-    //verifico si hay un usuario logueado
-    const user = JSON.parse(localStorage.getItem('user'));
-  
+   
     useEffect(() => {
       consultaAPI();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     const consultaAPI = async () => {
-        const isAdmin = {isAdmin: user.isAdmin};
       try {
         const respuesta = await fetch(URL);
         const datos = await respuesta.json();

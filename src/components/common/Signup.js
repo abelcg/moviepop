@@ -108,7 +108,7 @@ const Signup = () => {
             required=""
             onChange={(e) => setPassword(e.target.value)}
           />
-          <a
+          <button
             className="password-toggle-btn text-dark btn"
             type="button"
             onClick={togglePassword}
@@ -118,7 +118,7 @@ const Signup = () => {
             ) : (
               <BsEyeFill></BsEyeFill>
             )}
-          </a>
+          </button>
         </div>
       </div>
       <div className="mb-3">
@@ -130,7 +130,7 @@ const Signup = () => {
             required=""
             onChange={(e) => setPasswordCheck(e.target.value)}
           />
-          <a
+          <button
             className="password-toggle-btn text-dark btn"
             type="button"
             onClick={togglePassword}
@@ -140,7 +140,7 @@ const Signup = () => {
             ) : (
               <BsEyeFill></BsEyeFill>
             )}
-          </a>
+          </button>
         </div>
       </div>
       <button className="btn btn-dark bg-principal btn-shadow d-block w-100" type="submit">
@@ -148,7 +148,7 @@ const Signup = () => {
       </button>
       {error === true ? (
         <Alert variant="danger" onClick={() => setError(false)} dismissible>
-          <p> {typeof errorMje==="Object"? errorMje.toString(): errorMje}</p>
+          <p> {typeof errorMje==="object"? errorMje.toString(): errorMje}</p>
         </Alert>
       ) : null}
       

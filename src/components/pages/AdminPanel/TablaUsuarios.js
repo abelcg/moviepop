@@ -8,11 +8,10 @@ const TablaUsuarios = () => {
   const URL = process.env.REACT_APP_API_URL + "users";
   const [usuarios, setUsuarios] = useState([]);
   const [isAdminToggle, setIsAdminToggle] = useState(0);
-  //verifico si hay un usuario logueado
-  const user = JSON.parse(localStorage.getItem("user"));
-
+  
   useEffect(() => {
     consultaAPI();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const consultaAPI = async () => {
