@@ -9,6 +9,7 @@ import { campoRequerido, validarURL } from "../helpers/helper";
 import Swal from "sweetalert2";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
+import { DateTime } from "luxon";
 
 const EditarPelicula = (props) => {
   const { id } = useParams();
@@ -109,6 +110,10 @@ const EditarPelicula = (props) => {
       setError(true);
     }
   };
+
+  const parseDate = (date) => {
+    return DateTime.fromISO(date).setLocale('sp').toFormat('MMMM dd, yyyy');
+   }
 
   return (
     <>
@@ -253,7 +258,7 @@ const EditarPelicula = (props) => {
                     ) : null}
                   </Card.Title>
                     <p className="fw-light d-flex ">
-                      {pelicula.releaseDate ? <span>{pelicula.releaseDate}</span> : null}
+                      {pelicula.releaseDate ? <span>{parseDate(pelicula.releaseDate)}</span> : null}
                     </p>
                   <Card.Text>{pelicula.language || null}</Card.Text>
                   {pelicula.synopsis ? (

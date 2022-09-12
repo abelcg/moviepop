@@ -12,8 +12,8 @@ import {
 import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
-
 import FavContext from "../context/FavContext";
+import { DateTime } from "luxon";
 
 const DetallePelicula = () => {
   const { id } = useParams();
@@ -121,6 +121,10 @@ const DetallePelicula = () => {
     }
   };
 
+  const parseDate = (date) => {
+    return DateTime.fromISO(date).setLocale('sp').toFormat('MMMM dd, yyyy');
+   }
+
   return (
     <section className="mt-4">
       {error2 === true ? (
@@ -163,7 +167,7 @@ const DetallePelicula = () => {
                 </Card.Title>
                 <p className="fw-light d-flex ">
                   {!error && pelicula.releaseDate ? (
-                    <span>{pelicula.releaseDate}</span>
+                    <span>{parseDate(pelicula.releaseDate)}</span>
                   ) : null}
                 </p>
                 <Card.Text>{!error ? pelicula.language : null}</Card.Text>
