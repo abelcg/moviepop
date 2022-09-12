@@ -38,7 +38,7 @@ const Navigation = () => {
       consultaAPI();
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }
-  }, [error, FavContext]);
+  }, [error]);
 
   const consultaAPI = async () => {
     const userId = user.userId;
